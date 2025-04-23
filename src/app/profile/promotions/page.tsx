@@ -3,12 +3,8 @@
 import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 
-import { Promotion } from '@/models/promotion.model';
-
 import ListPromotions from '@/components/listPromotions';
 import { ROUTES } from '@/shared/routes';
-
-type PromoOrAd = Promotion | { isAd: true };
 
 const MyPromotionsPage = () => {
     const router = useRouter();

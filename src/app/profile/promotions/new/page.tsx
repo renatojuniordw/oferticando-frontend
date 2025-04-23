@@ -96,13 +96,16 @@ const PublishPage = () => {
                 toast.current?.show({ severity: 'warn', summary: 'Atenção', detail: 'Preencha os dados manualmente.', life: 4000 });
             }
 
-        } catch (err) {
-            toast.current?.show({ severity: 'error', summary: 'Erro', detail: 'Erro ao buscar dados.', life: 5000 });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        } catch (err: any) {
+            const errorMessage = err instanceof Error ? err.message : 'Erro desconhecido';
+            toast.current?.show({ severity: 'error', summary: 'Erro', detail: errorMessage, life: 5000 });
         }
 
         setIsLoading(false);
     };
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const submitForm = (data: any) => {
         const finalImage = offerData.image || manualImage;
         if (!finalImage) {
