@@ -3,7 +3,12 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --orange: #ED6F1D;
+  --black: #000000;
+  --brown: #4E342E;
+  --navy-blue: #1C3661;
 }
+
 
 @theme inline {
   --color-background: var(--background);
@@ -23,4 +28,15 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+.input-focus:focus {
+  border-color: var(--orange);
+  box-shadow: 0 0 0 1px var(--orange);
+  outline: none;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+Button {
+  border: none !important;
 }
