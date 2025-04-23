@@ -1,11 +1,14 @@
 'use client';
 
+import { Divider } from 'primereact/divider';
 import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 import { Image } from 'primereact/image';
-import { Divider } from 'primereact/divider';
 
-const Promotion = () => {
+import PageHeader from '@/components/layout/PageHeader';
+import ListPromotions from '@/components/listPromotions';
+
+const PromotionPage = () => {
   const router = useRouter();
 
   const promotion = {
@@ -21,7 +24,7 @@ const Promotion = () => {
 
   return (
     <>
-      <Button icon="pi pi-chevron-left" onClick={() => router.back()} className="mb-4 focus:outline-none focus:ring-0 border-none shadow-none ring-0" text />
+      <PageHeader onBack={() => router.back()} />
 
       <div className="container mx-auto px-4 py-6">
 
@@ -51,25 +54,40 @@ const Promotion = () => {
               </div>
             </div>
 
-            <Divider />
-
             <p className="text-sm text-gray-500 mb-2">
               Postado por {promotion.creator}
             </p>
+
+            <Divider />
+
+
           </div>
         </div>
-      </div>
 
-      <div className="p-4 mb-4">
-        <div className="bg-gray-100 border border-dashed border-gray-300 p-6 rounded text-center text-sm text-gray-500">
-          {/* Substitua pelo código real do Google Ads aqui */}
-          {/* <AdSense /> */}
-          Espaço reservado para anúncio Google Ads
-
+        <div className="p-4 mb-4">
+          <div className="bg-gray-100 border border-dashed border-gray-300 p-6 rounded text-center text-sm text-gray-500">
+            {/* Substitua pelo código real do Google Ads aqui */}
+            {/* <AdSense /> */}
+            Espaço reservado para anúncio Google Ads
+          </div>
         </div>
+
+        <Divider />
+
+        <div>
+          <h2 className="font-semibold text-lg leading-snug mb-1">
+            Outras Ofertas
+          </h2>
+          <div className="flex flex-col h-[calc(100vh-650px)]">
+            <ListPromotions showControls={false} />
+          </div>
+        </div>
+
       </div>
+
+
     </>
   );
 }
 
-export default Promotion
+export default PromotionPage
