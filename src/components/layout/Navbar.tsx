@@ -74,7 +74,7 @@ const Navbar = () => {
                             onClick={() => setSearchOpen(false)}
                             className="p-2 text-gray-700"
                         >
-                            <i className="pi pi-angle-left"></i>
+                            <i className="pi pi-times"></i>
                         </button>
                         <input
                             type="text"
