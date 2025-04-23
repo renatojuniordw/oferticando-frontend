@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 const AdSense = () => {
     useEffect(() => {
         try {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             ((window as any).adsbygoogle = (window as any).adsbygoogle || []).push({})
         } catch (e) {
             console.error(e)

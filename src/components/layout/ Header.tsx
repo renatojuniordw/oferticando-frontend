@@ -1,7 +1,6 @@
 'use client';
 
 import { useState } from 'react';
-import { useRouter } from 'next/navigation';
 import LogoSVG from '@/assets/svg/LogoSVG';
 
 import { SearchIcon } from 'primereact/icons/search';
@@ -9,7 +8,6 @@ import { SearchIcon } from 'primereact/icons/search';
 
 const Header = () => {
   const [searchOpen, setSearchOpen] = useState(false);
-  const router = useRouter();
 
   return (
     <header className="border-b shadow-sm sticky top-0 bg-white z-50">

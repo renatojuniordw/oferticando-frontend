@@ -1,15 +1,12 @@
 'use client';
 
-import { useParams, useRouter } from 'next/navigation';
+import { useRouter } from 'next/navigation';
 import { Button } from 'primereact/button';
 import { Image } from 'primereact/image';
 import { Divider } from 'primereact/divider';
 
 const Promotion = () => {
   const router = useRouter();
-
-  const params = useParams();
-  const id = params.id;
 
   const promotion = {
     id: 1,

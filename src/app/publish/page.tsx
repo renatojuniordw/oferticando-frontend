@@ -54,7 +54,7 @@ const PublishPage = () => {
     const [isLoading, setIsLoading] = useState(false);
     const [manualImage, setManualImage] = useState('');
     const toast = useRef<Toast>(null);
-    const { handleSubmit, control, setValue, reset, formState: { errors, isValid } } = useForm({ mode: 'onChange' });
+    const { handleSubmit, control, setValue, reset, formState: { errors } } = useForm({ mode: 'onChange' });
 
     const router = useRouter();
 
@@ -110,6 +110,7 @@ const PublishPage = () => {
         setIsLoading(false);
     }
 
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     function submitForm(data: any) {
         const finalImage = offerData.image || manualImage;
 

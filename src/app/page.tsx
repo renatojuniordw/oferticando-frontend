@@ -1,17 +1,14 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 
 import { Button } from 'primereact/button';
 import { Image } from 'primereact/image';
-import { Skeleton } from 'primereact/skeleton';
 
 import { DataScroller } from 'primereact/datascroller';
 
 import { useRouter } from 'next/navigation';
-import { Divider } from 'primereact/divider';
-import AdSense from '@/components/adSense/AdSense';
 
 interface Promotion {
   id: number;
