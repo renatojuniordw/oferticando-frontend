@@ -8,6 +8,7 @@ import { InputText } from 'primereact/inputtext';
 import { Password } from 'primereact/password';
 import { Button } from 'primereact/button';
 import { useState } from 'react';
+import { ROUTES } from '@/shared/routes';
 
 interface LoginForm {
     email: string;
@@ -30,7 +31,7 @@ export default function LoginPage() {
         setLoading(true);
         console.log('Login:', data);
         setTimeout(() => {
-            router.push('/profile/promotions');
+            router.push(ROUTES.PROFILE.PROMOTIONS);
         }, 1000);
     };
 

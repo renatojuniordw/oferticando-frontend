@@ -6,6 +6,7 @@ import { Button } from 'primereact/button';
 import { Promotion } from '@/models/promotion.model';
 
 import ListPromotions from '@/components/listPromotions';
+import { ROUTES } from '@/shared/routes';
 
 type PromoOrAd = Promotion | { isAd: true };
 
@@ -20,7 +21,7 @@ const MyPromotionsPage = () => {
                     text
                     icon="pi pi-plus"
                     className="!text-orange-500"
-                    onClick={() => router.push('/profile/promotions/new')}
+                    onClick={() => router.push(ROUTES.PROFILE.PROMOTIONS_NEW)}
                 />
             </div>
 

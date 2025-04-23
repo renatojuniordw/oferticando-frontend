@@ -5,6 +5,7 @@ import LogoSVG from '@/assets/svg/LogoSVG';
 
 import { SearchIcon } from 'primereact/icons/search';
 import { useRouter } from 'next/navigation';
+import { ROUTES } from '@/shared/routes';
 
 
 const Navbar = () => {
@@ -19,7 +20,7 @@ const Navbar = () => {
                 <div className="container mx-auto px-4 py-3 flex items-center justify-between md:justify-start gap-4 items-center">
                     {/* Logo */}
                     <div className="flex items-center gap-4 self-center">
-                        <button onClick={() => router.push('/')} className="focus:outline-none">
+                        <button onClick={() => router.push(ROUTES.HOME)} className="focus:outline-none">
                             <LogoSVG width={200} />
                         </button>
                     </div>
@@ -48,7 +49,7 @@ const Navbar = () => {
                     {/* Ícone do usuário */}
                     <div className="md:hidden self-center">
                         <button
-                            onClick={() => router.push(`/login`)}
+                            onClick={() => router.push(ROUTES.LOGIN)}
                             className="p-2 rounded-full hover:bg-gray-100"
                         >
                             <i className="pi pi-user text-gray-600"></i>
@@ -56,7 +57,7 @@ const Navbar = () => {
                     </div>
                     <div className="hidden md:flex items-center gap-2 ml-4 self-center">
                         <button
-                            onClick={() => router.push(`/login`)}
+                            onClick={() => router.push(ROUTES.LOGIN)}
                             className="p-2 rounded-full hover:bg-gray-100"
                         >
                             <i className="pi pi-user text-gray-600"></i>
