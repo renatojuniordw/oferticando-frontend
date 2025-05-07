@@ -22,7 +22,6 @@ export default function EditPromotionPage() {
   });
 
   const onSubmit = (data: EditForm) => {
-    console.log('Promoção editada:', { id, ...data });
     router.push('/profile/promotions');
   };
 

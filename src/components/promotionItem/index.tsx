@@ -29,7 +29,7 @@ export const PromotionItem = ({
                 <div className={variant === 'compact' ? "w-[40%] flex items-center" : "w-[20%] flex items-center"}>
                     <Image
                         width='100%'
-                        src={promo.image}
+                        src={promo.image_url}
                         alt={promo.title}
                         className="rounded-lg object-cover w-full h-auto"
                     />
@@ -40,7 +40,8 @@ export const PromotionItem = ({
                         <h2 className={`${titleSize} font-semibold text-gray-900 mb-1`}>
                             {promo.title}
                         </h2>
-                        <p className="text-sm text-orange-600 font-medium mb-1">Vendido por {promo.store}</p>
+                        <p className="text-sm text-orange-600 font-medium mb-1">Vendido por {promo.retail_store.name}</p>
+                        <p className="text-sm  font-medium my-3">Postado por {promo.user.nickname}</p>
                         {showControls ? (
                             <div className="flex flex-col items-end justify-end min-w-[120px] ml-0 md:ml-4 mt-4 md:mt-0">
                                 <Button

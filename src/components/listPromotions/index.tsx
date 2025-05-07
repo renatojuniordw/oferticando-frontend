@@ -4,6 +4,8 @@ import { DataScroller } from "primereact/datascroller"
 
 import { Promotion } from "@/models/promotion.model";
 import { PromotionItem } from "../promotionItem";
+import AdSense from "../adSense/AdSense";
+import { getProducts } from '@/services/products';
 
 interface Props {
     showControls: boolean;
@@ -27,23 +29,16 @@ const ListPromotions = ({ showControls }: Props) => {
 
 
     useEffect(() => {
-        const mockData: PromoOrAd[] = [];
-        for (let i = 0; i < 100; i++) {
-            if ((i + 1) % 6 === 0) {
-                mockData.push({ isAd: true });
-            } else {
-                mockData.push({
-                    id: i + 1,
-                    title: `Promoção #${i + 1}`,
-                    store: 'Amazon',
-                    creator: 'Renato',
-                    image: 'https://www.loja.canon.com.br/wcsstore/CDBCatalogAssetStore/EOSR524105-01.jpg',
-                    link: 'https://www.amazon.com.br',
-                    clicks: Math.floor(Math.random() * 100),
-                });
+        const fetchProducts = async () => {
+            try {
+                const response = await getProducts();
+                setPromotions(response.data);
+            } catch (error) {
+                console.error('Erro ao buscar promoções:', error);
             }
-        }
-        setPromotions(mockData);
+        };
+
+        fetchProducts();
     }, []);
 
     const itemTemplate = (promo: PromoOrAd) => {
@@ -52,6 +47,7 @@ const ListPromotions = ({ showControls }: Props) => {
                 <div className="p-4 mb-4">
                     <div className="bg-gray-100 border border-dashed border-gray-300 p-6 rounded text-center text-sm text-gray-500">
                         Espaço reservado para anúncio Google Ads
+                        {/* <AdSense /> */}
                     </div>
                 </div>
             );
